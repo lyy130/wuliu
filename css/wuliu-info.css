@@ -1,0 +1,184 @@
+html,body{
+    height:100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: #f3f3f3;
+    flex-direction: column;
+    display: flex;
+}
+
+@font-face { font-family: 'iconfont'; src: url('../font2/iconfont.eot'); src: url('../font2/iconfont.eot?#iefix') format('embedded-opentype'), url('../font2/iconfont.woff') format('woff'), url('../font2/iconfont.ttf') format('truetype'), url('../font2/iconfont.svg#iconfont') format('svg'); }
+
+.iconfont{ font-family:"iconfont" !important; font-size:16px;font-style:normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale;
+    /*color: #FF6D6D;*/
+}
+
+.cell{ font-family:"iconfont" !important; font-size:16px;font-style:normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale;
+    /*color: #FF6D6D;*/
+}
+
+
+header{
+    width: 100%;
+    height: 143px;
+    line-height: 143px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+header .left, header .right{
+    width: 80px;
+    font-size: 10px;
+    height: 140px;
+    box-sizing: border-box;
+    line-height: 140px;
+    justify-content: center;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+}
+header .left, header .right,header .center{
+   margin-top: -30px;
+}
+ header .right{
+    color: #C8D0E3;
+}
+header .left{
+    width: 70px;
+}
+.main{
+    /*flex-wrap: wrap;*/
+    position:relative;
+    flex:1;
+    overflow:scroll;
+    background-color:#f1f1f1;
+}
+ .feiyong{
+    width: 95%;
+    height: 160px;
+    margin: 0 auto;
+    position: absolute;
+    top: 70px;
+    left: 9px;
+    border-radius: 10px;
+     z-index: 1000;
+    background: white;
+}
+.feiyong .shang{
+    display: flex;
+    height: 96px;
+    align-items: center;
+}
+ .feiyong  .shang .qi,.feiyong  .shang .lu, .feiyong .shang .shi{
+    flex: 1;
+}
+.feiyong  .shang .qi{
+    text-align: right;
+}
+.feiyong  .shang .qi span:first-of-type{
+    font-size: 16px;
+}
+ .feiyong  .shang .qi span:nth-of-type(2){
+    font-size: 10px;
+    color: #ccc;
+}
+ .feiyong  .shang .shi{
+    text-align: left;
+}
+
+.feiyong .lu{
+    width: 80%;
+    text-align: center;
+}
+.feiyong .lu img{
+    width: 64px;
+    height: 38px;
+}
+
+ .feiyong  .xia{
+    width: 100%;
+    display: flex;
+}
+ .feiyong  .xia>div{
+    text-align: center;
+    flex: 1;
+}
+ .feiyong  .xia>div span:first-of-type{
+    font-size: 16px;
+    font-weight: bold;
+}
+.feiyong  .xia>div span:last-of-type{
+    font-size: 12px;
+    color: #ccc;
+}
+.main .wuliuList{
+    height: 100%;
+    margin-top: 106px;
+    overflow: hidden;
+}
+.main .wuliuList ul{
+    background: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.main .wuliuList ul>span{
+    width: 38px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    position: absolute;
+    top: 46px;
+    right: 0;
+    border-radius: 10px 0 0 10px;
+    background: #427affe6;
+}
+.main .wuliuList ul>span>i{
+    color: white;
+}
+.main .wuliuList li:first-of-type{
+    font-size: 12px;
+    margin: 14px 0 16px 9px;
+    color: #333;
+}
+.main .wuliuList li:nth-of-type(2){
+    font-size: 13px;
+    margin: 0 0 11px 9px;
+    font-weight: bold;
+    color: #333;
+}
+.main .wuliuList li:nth-of-type(3),.main .wuliuList li:nth-of-type(4){
+    font-size: 13px;
+    margin: 11px 0 0 9px;
+    color: #333;
+}
+.main .wuliuList li:nth-of-type(5){
+    font-size: 13px;
+    margin: 12px 0 11px 9px;
+    display: flex;
+    justify-content: space-between;
+}
+.main .wuliuList li:nth-of-type(5) .biaoqian span{
+    width: 35px;
+    height: 17px;
+    line-height: 18px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 8px;
+    color: #5C6287;
+    background: #E6E7ED;
+}
+.main .wuliuList li:nth-of-type(5) .count{
+    padding-right: 7px;
+}
+.main .wuliuList:nth-of-type(2),.main .wuliuList:nth-of-type(3){
+    height: 175px;
+    margin-top: 19px;
+    background: white;
+    overflow: hidden;
+}

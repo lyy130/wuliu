@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>物流详情更多</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/wuliu-infoMore.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="left"><i class="iconfont">&#xe679;</i></div>
+        <div class="center"></div>
+        <div class="right">下载托运协议</div>
+    </header>
+    <div class="feiyong">
+        <!--<div class="shang">-->
+            <!--<div class="qi">-->
+                <!--<span>东西湖区</span><br/>-->
+                <!--<span>湖北省 武汉市</span>-->
+            <!--</div>-->
+            <!--<div class="lu"><div><i class="icon1">&#xe649;</i></div></div>-->
+            <!--<div class="shi qi">-->
+                <!--<span>芙蓉区</span><br/>-->
+                <!--<span>湖北省 长沙市</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="main">
+        <div class="mainInfo">
+
+        </div>
+        <!--<p>发货信息</p>-->
+        <!--<ul class="wuliuList">-->
+            <!--<li>托运单号TY1808221002</li>-->
+            <!--<li>八方物流·027-81239876</li>-->
+            <!--<li>-->
+                <!--<i class="iconfont">&#xe618;</i>小蜜蜂食品有限公司</li>-->
+            <!--<li><i class="iconfont">&#xe602;</i>东吴大道康利工业园</li>-->
+            <!--<span><i class="cell">&#xe666;</i></span>    &lt;!&ndash;定位&ndash;&gt;-->
+        <!--</ul>-->
+
+        <!--<p>收货信息</p>-->
+        <!--<ul class="wuliuList">-->
+            <!--<li>托运单号TY1808221002</li>-->
+            <!--<li>八方物流·027-81239876</li>-->
+            <!--<li>-->
+                <!--<i class="iconfont">&#xe618;</i>小蜜蜂食品有限公司</li>-->
+            <!--<li><i class="iconfont">&#xe602;</i>东吴大道康利工业园</li>-->
+            <!--<span><i class="cell">&#xe666;</i></span>    &lt;!&ndash;定位&ndash;&gt;-->
+        <!--</ul>-->
+        <!--<p>货物明细</p>-->
+       <!-- <p>货物明细</p>-->
+        <!--<table class="mingxi">-->
+            <!--<tr>-->
+                <!--<td>货品</td>-->
+                <!--<td>件数</td>-->
+                <!--<td>重量(kg)</td>-->
+                <!--<td>体积(方)</td>-->
+                <!--<td>包装</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>食品</td>-->
+                <!--<td>100</td>-->
+                <!--<td>120</td>-->
+                <!--<td>3</td>-->
+                <!--<td>纸箱</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>饮料</td>-->
+                <!--<td>60</td>-->
+                <!--<td>70</td>-->
+                <!--<td>1</td>-->
+                <!--<td>纸箱</td>-->
+            <!--</tr>-->
+       <!-- </table>-->
+        <!--<table class="qian">-->
+            <!--<tr>-->
+                <!--<td>签收人</td>-->
+                <!--<td>刘志明</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>签收身份证</td>-->
+                <!--<td>421023100911039882</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+  
+        <p>签字图</p>
+        <form class="qianZi" id="uploadForm" enctype="multipart/form-data"><i class="jia" >&#xe604;</i>
+            <input id="file" type="file" name="file"/>
+                <!--<img src="" alt="" class="img">-->
+        </form>
+
+
+        <!--<form id="uploadForm" enctype="multipart/form-data">-->
+            <!--文件:<input id="file" type="file" name="file"/>-->
+            <!--<img src="" alt="">-->
+            <!--<div></div>-->
+        <!--</form>-->
+        <div class="tuPian"><img src="" alt=""><i class="close">&#xe616;</i></div>
+    </div>
+    <footer id="upload"><i class="sc">&#xe6c7;</i>上传回单照片</footer>
+</div>
+
+
+    <script type="text/template" id="feiyongTemplate">
+        <div class="shang">
+            <div class="qi">
+                <span><%=waybillInfo.deliveryArea%></span><br/>
+                <span><%=waybillInfo.deliveryProvince%> <%=waybillInfo.deliveryCity%></span>
+            </div>
+            <div class="lu" >
+            	<% if(yk == '油卡付未结') { %>
+            		<img src="img/youkax2.png">
+            	<% } %>
+            	<% if(yk == '油卡付已结') { %>
+            		<img src="img/youkayijie2x.png">
+            	<% } %>
+            	<% if(yk == '现付未结') { %>
+            		<img src="img/xianfuW.png">
+            	<% } %>
+            	<% if(yk == '卸货付未结') { %>
+            		<img src="img/xiehuoW.png">
+            	<% } %>
+            	<% if(yk == '卸货付已结') { %>
+            		<img src="img/xiehuoY.png">
+            	<% } %>
+            	
+            </div>
+            <div class="shi qi">
+                <span><%=waybillInfo.receiveArea%></span><br/>
+                <span><%=waybillInfo.receiveProvince%> <%=waybillInfo.receiveCity%></span>
+            </div>
+        </div>
+        <!--<div class="xia">
+            <div>
+                <span><%=nowFee%></span><br/>
+                <span><%=balanceStatus%></span>
+            </div>
+            <div>
+                <span><%=receiptFee%></span><br/>
+                <span>回单押金</span>
+            </div>
+            <div>
+                <span><%=deliveryFee%></span><br/>
+                <span>送货费</span>
+            </div>
+            <div>
+                <span><%=loadFee%></span><br/>
+                <span>装卸费</span>
+            </div>
+            <div>
+                <span><%=otherFee%></span><br/>
+                <span>其他费用</span>
+            </div>
+        </div>
+    </script>-->
+
+    <script type="text/template" id="wuliuTemplate">
+        <p>发货信息</p>
+        <ul class="wuliuList">
+          <!--  <li class='center'>托运单号</li>-->
+            <li class='com'></li>
+            <li class='comd'><i class="iconfont">&#xe618;</i></li>
+            <li class='coma'><i class="iconfont">&#xe602;</i></li>
+            <span><i class="cell">&#xe666;</i></span>    <!--定位-->
+        </ul>
+
+        <p>收货信息</p>
+        <ul class="wuliuList">
+         <!--   <li>托运单号<%=waybillCode%></li>-->
+            <li><%=waybillInfo.receiveCompany%>·<%=waybillInfo.receiveMobile%></li>
+            <li>
+            <i class="iconfont">&#xe618;</i><%=waybillInfo.receiveCompany%></li>
+            <li><i class="iconfont">&#xe602;</i><%=waybillInfo.receiveAddress%></li>
+            <span><i class="cell">&#xe666;</i></span>    <!--定位-->
+        </ul>
+         <p>货物明细</p>
+       <table class="mingxi">
+		    <tr>
+		        <td>货品</td>
+		        <td>件数</td>
+		        <td>重量(kg)</td>
+		        <td>体积(方)</td>
+		        <td>包装</td>
+		    </tr>
+		    <% for(var i = 0;i < waybillInfoList.length; i++){ %>
+		        <tr>
+		            <td><%=waybillInfoList[i].goodsAlias%></td>
+		            <td><%=waybillInfoList[i].number%></td>
+		            <td><%=waybillInfoList[i].weight%></td>
+		            <td><%=waybillInfoList[i].volume%></td>
+		            <td><%=waybillInfoList[i].packagName%></td>
+		        </tr>
+		    <% } %>
+    	</table>
+		<p>签收信息</p>
+        <table class="qian">
+            <tr>
+                <td>签收人</td>
+                <td class='name'>刘志明</td>
+            </tr>
+            <tr>
+                <td>签收身份证</td>
+                <td class='nameId'>421023100911039882</td>
+            </tr>
+        </table>
+
+      <input type="button" id="queqian" value="确定签收"></input>
+
+    </script>
+<script type="text/template" id="mingXiTemplate">
+
+</script>
+
+    <script src="dist1/zepto/zepto.min.js"></script>
+    <script src="js/dw.js"></script>
+    <script src="js/common.js"></script>
+     <script src="dist1/artTemplate/template-native.js"></script>
+      <script src="js/wuliu-infoMore.js"></script>
+    
+  
+   
+    <script>
+//  $("body").on('click',"#queqian",function (){
+//  	console.log(123)
+//      	alert("哈哈哈")
+//  })
+    </script>
+
+</body>
+</html>
+
